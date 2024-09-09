@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_footer_footers",
+  "info": {
+    "displayName": "footer",
+    "icon": "cube"
+  },
+  "options": {},
+  "attributes": {
+    "links": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

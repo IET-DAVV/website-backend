@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "achievements",
+  "info": {
+    "singularName": "achievement",
+    "pluralName": "achievements",
+    "displayName": "Achievement"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "year": {
+      "type": "string",
+      "required": true,
+      "default": "2022",
+      "minLength": 4,
+      "maxLength": 4
+    },
+    "title": {
+      "type": "string",
+      "default": "Achievement",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "default": "Lorem Ipsum dolor sit amet"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
