@@ -362,86 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiAchievementAchievement extends Schema.CollectionType {
-  collectionName: 'achievements';
-  info: {
-    singularName: 'achievement';
-    pluralName: 'achievements';
-    displayName: 'Achievement';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    year: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 4;
-        maxLength: 4;
-      }> &
-      Attribute.DefaultTo<'2022'>;
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.DefaultTo<'Achievement'>;
-    description: Attribute.Text &
-      Attribute.Required &
-      Attribute.DefaultTo<'Lorem Ipsum dolor sit amet'>;
-    image: Attribute.Media<'images'> & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::achievement.achievement',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::achievement.achievement',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiWebsiteWebsite extends Schema.CollectionType {
-  collectionName: 'websites';
-  info: {
-    singularName: 'website';
-    pluralName: 'websites';
-    displayName: 'website';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    landing: Attribute.JSON & Attribute.Required;
-    description: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 50;
-      }> &
-      Attribute.DefaultTo<'lorem ipsum'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::website.website',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::website.website',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -868,6 +788,126 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutAbout extends Schema.CollectionType {
+  collectionName: 'abouts';
+  info: {
+    singularName: 'about';
+    pluralName: 'abouts';
+    displayName: 'About ';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aboutIET: Attribute.JSON;
+    directorPhoto: Attribute.Media<'images'> & Attribute.Required;
+    viceChancellorPhoto: Attribute.Media<'images'> & Attribute.Required;
+    ietHistory: Attribute.JSON & Attribute.Required;
+    aboutAchievement: Attribute.JSON & Attribute.Required;
+    missionIET: Attribute.JSON & Attribute.Required;
+    missionDAVV: Attribute.JSON & Attribute.Required;
+    directorMessege: Attribute.JSON & Attribute.Required;
+    vision: Attribute.JSON & Attribute.Required;
+    vcMessege: Attribute.JSON & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about.about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about.about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAchievementAchievement extends Schema.CollectionType {
+  collectionName: 'achievements';
+  info: {
+    singularName: 'achievement';
+    pluralName: 'achievements';
+    displayName: 'Achievement';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    year: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 4;
+        maxLength: 4;
+      }> &
+      Attribute.DefaultTo<'2022'>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Achievement'>;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'Lorem Ipsum dolor sit amet'>;
+    image: Attribute.Media<'images'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::achievement.achievement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::achievement.achievement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWebsiteWebsite extends Schema.CollectionType {
+  collectionName: 'websites';
+  info: {
+    singularName: 'website';
+    pluralName: 'websites';
+    displayName: 'website';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    landing: Attribute.JSON & Attribute.Required;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 50;
+      }> &
+      Attribute.DefaultTo<'lorem ipsum'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::website.website',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::website.website',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -878,8 +918,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::achievement.achievement': ApiAchievementAchievement;
-      'api::website.website': ApiWebsiteWebsite;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -888,6 +926,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::about.about': ApiAboutAbout;
+      'api::achievement.achievement': ApiAchievementAchievement;
+      'api::website.website': ApiWebsiteWebsite;
     }
   }
 }
