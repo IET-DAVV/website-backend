@@ -362,86 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiAchievementAchievement extends Schema.CollectionType {
-  collectionName: 'achievements';
-  info: {
-    singularName: 'achievement';
-    pluralName: 'achievements';
-    displayName: 'Achievement';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    year: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 4;
-        maxLength: 4;
-      }> &
-      Attribute.DefaultTo<'2022'>;
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.DefaultTo<'Achievement'>;
-    description: Attribute.Text &
-      Attribute.Required &
-      Attribute.DefaultTo<'Lorem Ipsum dolor sit amet'>;
-    image: Attribute.Media<'images'> & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::achievement.achievement',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::achievement.achievement',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiWebsiteWebsite extends Schema.CollectionType {
-  collectionName: 'websites';
-  info: {
-    singularName: 'website';
-    pluralName: 'websites';
-    displayName: 'website';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    landing: Attribute.JSON & Attribute.Required;
-    description: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 50;
-      }> &
-      Attribute.DefaultTo<'lorem ipsum'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::website.website',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::website.website',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -868,6 +788,309 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAcademicProgramAcademicProgram
+  extends Schema.CollectionType {
+  collectionName: 'academic_programs';
+  info: {
+    singularName: 'academic-program';
+    pluralName: 'academic-programs';
+    displayName: 'Academic-Program';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ProgramName: Attribute.Enumeration<['Bachelor', 'PhD', 'Masters']>;
+    CourseName: Attribute.Component<'landing.cousre-name', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::academic-program.academic-program',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::academic-program.academic-program',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAchievementAchievement extends Schema.CollectionType {
+  collectionName: 'achievements';
+  info: {
+    singularName: 'achievement';
+    pluralName: 'achievements';
+    displayName: 'Achievement';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    year: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 4;
+        maxLength: 4;
+      }> &
+      Attribute.DefaultTo<'2022'>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Achievement'>;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'Lorem Ipsum dolor sit amet'>;
+    image: Attribute.Media<'images'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::achievement.achievement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::achievement.achievement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
+  collectionName: 'announcements';
+  info: {
+    singularName: 'announcement';
+    pluralName: 'announcements';
+    displayName: 'Announcement';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Heading: Attribute.Text;
+    Link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::announcement.announcement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::announcement.announcement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiClubClub extends Schema.CollectionType {
+  collectionName: 'clubs';
+  info: {
+    singularName: 'club';
+    pluralName: 'clubs';
+    displayName: 'Club';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ClubName: Attribute.String;
+    Description: Attribute.Text;
+    Images: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::club.club', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::club.club', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEventEvent extends Schema.CollectionType {
+  collectionName: 'events';
+  info: {
+    singularName: 'event';
+    pluralName: 'events';
+    displayName: 'Event';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    EventPicture: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLandingLanding extends Schema.SingleType {
+  collectionName: 'landings';
+  info: {
+    singularName: 'landing';
+    pluralName: 'landings';
+    displayName: 'LandingDescription';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Description: Attribute.Text;
+    Image: Attribute.Media<'images'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::landing.landing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::landing.landing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRecruiterRecruiter extends Schema.CollectionType {
+  collectionName: 'recruiters';
+  info: {
+    singularName: 'recruiter';
+    pluralName: 'recruiters';
+    displayName: 'Recruiter';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Description: Attribute.String;
+    RecuiterLogo: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::recruiter.recruiter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::recruiter.recruiter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiStatisticStatistic extends Schema.CollectionType {
+  collectionName: 'statistics';
+  info: {
+    singularName: 'statistic';
+    pluralName: 'statistics';
+    displayName: 'Placement Statistics';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    StudentsPlaced: Attribute.Integer;
+    NoOfStudents: Attribute.Integer;
+    CompaniesVisited: Attribute.Integer;
+    CompanyName: Attribute.Component<'landing.landing', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::statistic.statistic',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::statistic.statistic',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWebsiteWebsite extends Schema.CollectionType {
+  collectionName: 'websites';
+  info: {
+    singularName: 'website';
+    pluralName: 'websites';
+    displayName: 'Home Page Welcome';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    landing: Attribute.JSON & Attribute.Required;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 50;
+      }> &
+      Attribute.DefaultTo<'lorem ipsum'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::website.website',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::website.website',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -878,8 +1101,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::achievement.achievement': ApiAchievementAchievement;
-      'api::website.website': ApiWebsiteWebsite;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -888,6 +1109,15 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::academic-program.academic-program': ApiAcademicProgramAcademicProgram;
+      'api::achievement.achievement': ApiAchievementAchievement;
+      'api::announcement.announcement': ApiAnnouncementAnnouncement;
+      'api::club.club': ApiClubClub;
+      'api::event.event': ApiEventEvent;
+      'api::landing.landing': ApiLandingLanding;
+      'api::recruiter.recruiter': ApiRecruiterRecruiter;
+      'api::statistic.statistic': ApiStatisticStatistic;
+      'api::website.website': ApiWebsiteWebsite;
     }
   }
 }

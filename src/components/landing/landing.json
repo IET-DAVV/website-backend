@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_landing_landing_s",
+  "info": {
+    "displayName": "Landing "
+  },
+  "options": {},
+  "attributes": {
+    "CompanyName": {
+      "type": "string"
+    },
+    "Percentage": {
+      "type": "integer"
+    }
+  }
+}

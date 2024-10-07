@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recruiters",
+  "info": {
+    "singularName": "recruiter",
+    "pluralName": "recruiters",
+    "displayName": "Recruiter"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Description": {
+      "type": "string"
+    },
+    "RecuiterLogo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
