@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_landing_cousre_names",
+  "info": {
+    "displayName": "CousreName"
+  },
+  "options": {},
+  "attributes": {
+    "CourseName": {
+      "type": "text"
+    }
+  }
+}

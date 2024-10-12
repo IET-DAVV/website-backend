@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "statistics",
+  "info": {
+    "singularName": "statistic",
+    "pluralName": "statistics",
+    "displayName": "Placement Statistics",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "StudentsPlaced": {
+      "type": "integer"
+    },
+    "NoOfStudents": {
+      "type": "integer"
+    },
+    "CompaniesVisited": {
+      "type": "integer"
+    },
+    "CompanyName": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing.landing"
+    }
+  }
+}
