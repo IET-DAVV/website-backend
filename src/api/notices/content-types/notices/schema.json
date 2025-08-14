@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "recruiters",
+  "collectionName": "notice",
   "info": {
-    "singularName": "recruiter",
-    "pluralName": "recruiters",
-    "displayName": "Recruiter",
+    "singularName": "notices",
+    "pluralName": "notice",
+    "displayName": "Notices",
     "description": ""
   },
   "options": {
@@ -12,15 +12,21 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Description": {
-      "type": "string"
+    "title": {
+      "type": "text"
     },
-    "RecuiterLogo": {
+    "date": {
+      "type": "date"
+    },
+    "pdf": {
       "type": "media",
       "multiple": true,
       "required": false,
       "allowedTypes": [
-        "images"
+        "images",
+        "files",
+        "videos",
+        "audios"
       ]
     }
   }

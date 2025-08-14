@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_contact_contacts",
+  "info": {
+    "displayName": "Contact"
+  },
+  "options": {},
+  "attributes": {
+    "Email": {
+      "type": "string"
+    },
+    "Phone": {
+      "type": "biginteger"
+    }
+  }
+}

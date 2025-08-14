@@ -21,6 +21,14 @@ export interface LandingCousreName extends Schema.Component {
   };
 }
 
+export interface GuidlinesSection extends Schema.Component {
+  collectionName: 'components_guidlines_sections';
+  info: {
+    displayName: 'section';
+  };
+  attributes: {};
+}
+
 export interface FooterFooter extends Schema.Component {
   collectionName: 'components_footer_footers';
   info: {
@@ -32,12 +40,49 @@ export interface FooterFooter extends Schema.Component {
   };
 }
 
+export interface EmailContact extends Schema.Component {
+  collectionName: 'components_email_contacts';
+  info: {
+    displayName: 'contact';
+  };
+  attributes: {
+    email: Attribute.String;
+  };
+}
+
+export interface ContactContact extends Schema.Component {
+  collectionName: 'components_contact_contacts';
+  info: {
+    displayName: 'Contact';
+  };
+  attributes: {
+    Email: Attribute.String;
+    Phone: Attribute.BigInteger;
+  };
+}
+
+export interface ContactContactOffice extends Schema.Component {
+  collectionName: 'components_contact_contact_offices';
+  info: {
+    displayName: 'Contact-Office';
+  };
+  attributes: {
+    Email: Attribute.String;
+    Phone: Attribute.BigInteger;
+    Mobile: Attribute.BigInteger;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'landing.landing': LandingLanding;
       'landing.cousre-name': LandingCousreName;
+      'guidlines.section': GuidlinesSection;
       'footer.footer': FooterFooter;
+      'email.contact': EmailContact;
+      'contact.contact': ContactContact;
+      'contact.contact-office': ContactContactOffice;
     }
   }
 }

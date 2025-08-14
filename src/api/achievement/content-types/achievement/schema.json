@@ -4,20 +4,14 @@
   "info": {
     "singularName": "achievement",
     "pluralName": "achievements",
-    "displayName": "Achievement"
+    "displayName": "Achievement About Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "year": {
-      "type": "string",
-      "required": true,
-      "default": "2022",
-      "minLength": 4,
-      "maxLength": 4
-    },
     "title": {
       "type": "string",
       "default": "Achievement",
@@ -28,13 +22,8 @@
       "required": true,
       "default": "Lorem Ipsum dolor sit amet"
     },
-    "image": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+    "icon": {
+      "type": "string"
     }
   }
 }

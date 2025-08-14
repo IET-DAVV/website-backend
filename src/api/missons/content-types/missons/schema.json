@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "missonss",
+  "info": {
+    "singularName": "missons",
+    "pluralName": "missonss",
+    "displayName": "Missons "
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    }
+  }
+}

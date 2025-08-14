@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_contact_contact_offices",
+  "info": {
+    "displayName": "Contact-Office"
+  },
+  "options": {},
+  "attributes": {
+    "Email": {
+      "type": "string"
+    },
+    "Phone": {
+      "type": "biginteger"
+    },
+    "Mobile": {
+      "type": "biginteger"
+    }
+  }
+}

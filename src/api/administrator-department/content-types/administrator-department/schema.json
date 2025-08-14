@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "administrator_departments",
+  "info": {
+    "singularName": "administrator-department",
+    "pluralName": "administrator-departments",
+    "displayName": "Administrator-Department"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Phone": {
+      "type": "biginteger"
+    },
+    "Designation": {
+      "type": "string"
+    },
+    "Background": {
+      "type": "string"
+    },
+    "researchInterestes": {
+      "type": "string"
+    }
+  }
+}

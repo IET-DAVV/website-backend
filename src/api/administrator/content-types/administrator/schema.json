@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "administrators",
+  "info": {
+    "singularName": "administrator",
+    "pluralName": "administrators",
+    "displayName": "Administrator-Directer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Contact": {
+      "displayName": "Contact",
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.contact"
+    },
+    "Designation": {
+      "type": "json"
+    },
+    "Qualification": {
+      "type": "json"
+    },
+    "Experience": {
+      "type": "json"
+    },
+    "Intereests": {
+      "type": "json"
+    },
+    "Publications": {
+      "type": "json"
+    },
+    "Resoonsiblities": {
+      "type": "json"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "administrator_adminoffices",
+  "info": {
+    "singularName": "administrator-adminoffice",
+    "pluralName": "administrator-adminoffices",
+    "displayName": "Administrator-Adminoffice"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Designation": {
+      "type": "string"
+    },
+    "Contact": {
+      "displayName": "Contact-Office",
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.contact-office"
+    },
+    "AcademicDetails": {
+      "type": "json"
+    },
+    "AdministrativeExprience": {
+      "type": "string"
+    },
+    "TeachingExperience": {
+      "type": "json"
+    },
+    "PaperPresented": {
+      "type": "json"
+    }
+  }
+}

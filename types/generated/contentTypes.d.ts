@@ -826,26 +826,20 @@ export interface ApiAchievementAchievement extends Schema.CollectionType {
   info: {
     singularName: 'achievement';
     pluralName: 'achievements';
-    displayName: 'Achievement';
+    displayName: 'Achievement About Page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    year: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 4;
-        maxLength: 4;
-      }> &
-      Attribute.DefaultTo<'2022'>;
     title: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'Achievement'>;
     description: Attribute.Text &
       Attribute.Required &
       Attribute.DefaultTo<'Lorem Ipsum dolor sit amet'>;
-    image: Attribute.Media<'images'> & Attribute.Required;
+    icon: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -857,6 +851,119 @@ export interface ApiAchievementAchievement extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::achievement.achievement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAdministratorAdministrator extends Schema.CollectionType {
+  collectionName: 'administrators';
+  info: {
+    singularName: 'administrator';
+    pluralName: 'administrators';
+    displayName: 'Administrator-Directer';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    Contact: Attribute.Component<'contact.contact'>;
+    Designation: Attribute.JSON;
+    Qualification: Attribute.JSON;
+    Experience: Attribute.JSON;
+    Intereests: Attribute.JSON;
+    Publications: Attribute.JSON;
+    Resoonsiblities: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::administrator.administrator',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::administrator.administrator',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAdministratorAdminofficeAdministratorAdminoffice
+  extends Schema.CollectionType {
+  collectionName: 'administrator_adminoffices';
+  info: {
+    singularName: 'administrator-adminoffice';
+    pluralName: 'administrator-adminoffices';
+    displayName: 'Administrator-Adminoffice';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    Designation: Attribute.String;
+    Contact: Attribute.Component<'contact.contact-office'>;
+    AcademicDetails: Attribute.JSON;
+    AdministrativeExprience: Attribute.String;
+    TeachingExperience: Attribute.JSON;
+    PaperPresented: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::administrator-adminoffice.administrator-adminoffice',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::administrator-adminoffice.administrator-adminoffice',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAdministratorDepartmentAdministratorDepartment
+  extends Schema.CollectionType {
+  collectionName: 'administrator_departments';
+  info: {
+    singularName: 'administrator-department';
+    pluralName: 'administrator-departments';
+    displayName: 'Administrator-Department';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    Phone: Attribute.BigInteger;
+    Designation: Attribute.String;
+    Background: Attribute.String;
+    researchInterestes: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::administrator-department.administrator-department',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::administrator-department.administrator-department',
       'oneToOne',
       'admin::user'
     > &
@@ -888,6 +995,38 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::announcement.announcement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAntiRaggingAntiRagging extends Schema.CollectionType {
+  collectionName: 'anti_raggings';
+  info: {
+    singularName: 'anti-ragging';
+    pluralName: 'anti-raggings';
+    displayName: 'Anti Ragging ';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    section: Attribute.Component<'guidlines.section', true>;
+    Title: Attribute.String;
+    Content: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::anti-ragging.anti-ragging',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::anti-ragging.anti-ragging',
       'oneToOne',
       'admin::user'
     > &
@@ -954,12 +1093,43 @@ export interface ApiEventEvent extends Schema.CollectionType {
   };
 }
 
+export interface ApiGalleryGallery extends Schema.CollectionType {
+  collectionName: 'galleries';
+  info: {
+    singularName: 'gallery';
+    pluralName: 'galleries';
+    displayName: 'Gallery';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    eventDate: Attribute.Date;
+    category: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::gallery.gallery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::gallery.gallery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLandingLanding extends Schema.SingleType {
   collectionName: 'landings';
   info: {
     singularName: 'landing';
     pluralName: 'landings';
-    displayName: 'LandingDescription';
+    displayName: 'Landing Description';
     description: '';
   };
   options: {
@@ -986,22 +1156,116 @@ export interface ApiLandingLanding extends Schema.SingleType {
   };
 }
 
+export interface ApiMissonsMissons extends Schema.CollectionType {
+  collectionName: 'missonss';
+  info: {
+    singularName: 'missons';
+    pluralName: 'missonss';
+    displayName: 'Missons ';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    description: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::missons.missons',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::missons.missons',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNewsAndEventsNewsAndEvents extends Schema.CollectionType {
+  collectionName: 'news_and_event';
+  info: {
+    singularName: 'news-and-events';
+    pluralName: 'news-and-event';
+    displayName: 'News & Events';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    pdf: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    date: Attribute.Date;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::news-and-events.news-and-events',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::news-and-events.news-and-events',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNoticesNotices extends Schema.CollectionType {
+  collectionName: 'notice';
+  info: {
+    singularName: 'notices';
+    pluralName: 'notice';
+    displayName: 'Notices';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.Text;
+    date: Attribute.Date;
+    pdf: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::notices.notices',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::notices.notices',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRecruiterRecruiter extends Schema.CollectionType {
   collectionName: 'recruiters';
   info: {
     singularName: 'recruiter';
     pluralName: 'recruiters';
     displayName: 'Recruiter';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Description: Attribute.String;
-    RecuiterLogo: Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    RecuiterLogo: Attribute.Media<'images', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1111,10 +1375,18 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::academic-program.academic-program': ApiAcademicProgramAcademicProgram;
       'api::achievement.achievement': ApiAchievementAchievement;
+      'api::administrator.administrator': ApiAdministratorAdministrator;
+      'api::administrator-adminoffice.administrator-adminoffice': ApiAdministratorAdminofficeAdministratorAdminoffice;
+      'api::administrator-department.administrator-department': ApiAdministratorDepartmentAdministratorDepartment;
       'api::announcement.announcement': ApiAnnouncementAnnouncement;
+      'api::anti-ragging.anti-ragging': ApiAntiRaggingAntiRagging;
       'api::club.club': ApiClubClub;
       'api::event.event': ApiEventEvent;
+      'api::gallery.gallery': ApiGalleryGallery;
       'api::landing.landing': ApiLandingLanding;
+      'api::missons.missons': ApiMissonsMissons;
+      'api::news-and-events.news-and-events': ApiNewsAndEventsNewsAndEvents;
+      'api::notices.notices': ApiNoticesNotices;
       'api::recruiter.recruiter': ApiRecruiterRecruiter;
       'api::statistic.statistic': ApiStatisticStatistic;
       'api::website.website': ApiWebsiteWebsite;
