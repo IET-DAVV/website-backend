@@ -1,5 +1,27 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface Q1Qualificcation extends Schema.Component {
+  collectionName: 'components_q1_qualificcations';
+  info: {
+    displayName: 'qualificcation';
+    description: '';
+  };
+  attributes: {
+    Qualification: Attribute.String;
+  };
+}
+
+export interface LandingLink extends Schema.Component {
+  collectionName: 'components_landing_links';
+  info: {
+    displayName: 'link';
+    description: '';
+  };
+  attributes: {
+    demo: Attribute.JSON;
+  };
+}
+
 export interface LandingLanding extends Schema.Component {
   collectionName: 'components_landing_landing_s';
   info: {
@@ -76,6 +98,8 @@ export interface ContactContactOffice extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'q1.qualificcation': Q1Qualificcation;
+      'landing.link': LandingLink;
       'landing.landing': LandingLanding;
       'landing.cousre-name': LandingCousreName;
       'guidlines.section': GuidlinesSection;

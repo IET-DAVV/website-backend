@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_landing_links",
+  "info": {
+    "displayName": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "demo": {
+      "type": "json"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_q1_qualificcations",
+  "info": {
+    "displayName": "qualificcation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Qualification": {
+      "type": "string"
+    }
+  }
+}
