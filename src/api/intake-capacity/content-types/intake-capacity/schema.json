@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "intake_capacities",
+  "info": {
+    "singularName": "intake-capacity",
+    "pluralName": "intake-capacities",
+    "displayName": "Intake Capacity"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "total": {
+      "type": "string"
+    },
+    "coursesOffered": {
+      "displayName": "coursesOffered",
+      "type": "component",
+      "repeatable": false,
+      "component": "intake-capacity.courses-offered"
+    }
+  }
+}

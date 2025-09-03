@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about_missios",
+  "info": {
+    "singularName": "about-missio",
+    "pluralName": "about-missios",
+    "displayName": "About-missio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ids": {
+      "type": "string"
+    },
+    "discription": {
+      "type": "text"
+    }
+  }
+}

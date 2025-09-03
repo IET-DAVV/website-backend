@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "administration_deps",
+  "info": {
+    "singularName": "administration-dep",
+    "pluralName": "administration-deps",
+    "displayName": "Administration_Dep"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "background": {
+      "type": "string"
+    },
+    "researchInterests": {
+      "type": "string"
+    }
+  }
+}

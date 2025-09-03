@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_intake_capacity_courses_offereds",
+  "info": {
+    "displayName": "coursesOffered"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "seats": {
+      "type": "string"
+    }
+  }
+}

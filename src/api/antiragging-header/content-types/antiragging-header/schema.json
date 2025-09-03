@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "antiragging_headers",
+  "info": {
+    "singularName": "antiragging-header",
+    "pluralName": "antiragging-headers",
+    "displayName": "antiragging-header"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionName": {
+      "type": "string"
+    }
+  }
+}

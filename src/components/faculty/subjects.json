@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_faculty_subjects",
+  "info": {
+    "displayName": "subjects"
+  },
+  "options": {},
+  "attributes": {
+    "subject": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

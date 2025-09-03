@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "landing_page_m_blocks",
+  "info": {
+    "singularName": "landing-page-m-block",
+    "pluralName": "landing-page-m-blocks",
+    "displayName": "Landing page M block"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "path": {
+      "type": "string"
+    }
+  }
+}

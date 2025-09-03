@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "landing_page_charts",
+  "info": {
+    "singularName": "landing-page-chart",
+    "pluralName": "landing-page-charts",
+    "displayName": "Landing Page Chart"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}

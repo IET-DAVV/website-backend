@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "test_time_tables",
+  "info": {
+    "singularName": "test-time-table",
+    "pluralName": "test-time-tables",
+    "displayName": "Test Time Table"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "PdfLink": {
+      "type": "string"
+    },
+    "CourseName": {
+      "type": "enumeration",
+      "enum": [
+        "BE_FULL_TIME",
+        "BE_PART_TIME"
+      ]
+    },
+    "branch": {
+      "type": "enumeration",
+      "enum": [
+        "Computer Science",
+        "Information Technology",
+        "Mechanical Engineering",
+        "Electronics and Instrumentation",
+        "Electronics and Telecommunication"
+      ]
+    },
+    "Year": {
+      "type": "enumeration",
+      "enum": [
+        "Year 1",
+        "Year2",
+        "Year3",
+        "Year4"
+      ]
+    },
+    "section": {
+      "type": "enumeration",
+      "enum": [
+        "section A",
+        "section B"
+      ]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "administration_admindas",
+  "info": {
+    "singularName": "administration-adminda",
+    "pluralName": "administration-admindas",
+    "displayName": "Administration_Adminda"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "AcademicDetails": {
+      "type": "string"
+    },
+    "AdministrativeExperience": {
+      "type": "string"
+    },
+    "interests": {
+      "type": "string"
+    },
+    "TeachingExperience": {
+      "type": "string"
+    },
+    "PapersPresented": {
+      "type": "text"
+    }
+  }
+}

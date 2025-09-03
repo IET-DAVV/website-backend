@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "process_tss",
+  "info": {
+    "singularName": "process-ts",
+    "pluralName": "process-tss",
+    "displayName": "process ts"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "file": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    }
+  }
+}

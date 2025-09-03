@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "about"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "aboutIET": {
+      "type": "string"
+    },
+    "aboutImage": {
+      "type": "string"
+    },
+    "aboutDirector": {
+      "type": "string"
+    },
+    "visionIET": {
+      "type": "string"
+    },
+    "visionDAVV": {
+      "type": "string"
+    },
+    "visionDavvText": {
+      "type": "string"
+    },
+    "visionIetText": {
+      "type": "string"
+    },
+    "aboutDirectorText": {
+      "type": "string"
+    }
+  }
+}

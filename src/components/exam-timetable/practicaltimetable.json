@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_exam_timetable_practicaltimetables",
+  "info": {
+    "displayName": "practicaltimetable"
+  },
+  "options": {},
+  "attributes": {
+    "branch": {
+      "type": "string"
+    },
+    "section": {
+      "type": "string"
+    },
+    "doc": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

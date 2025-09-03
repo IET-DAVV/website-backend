@@ -1,0 +1,52 @@
+{
+  "collectionName": "components_faculty_faculties",
+  "info": {
+    "displayName": "faculty"
+  },
+  "options": {},
+  "attributes": {
+    "branch": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "position": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "biginteger"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "dob": {
+      "type": "date"
+    },
+    "qualifications": {
+      "type": "json"
+    },
+    "tabs": {
+      "displayName": "tabs",
+      "type": "component",
+      "repeatable": false,
+      "component": "tabs.tabs"
+    }
+  }
+}

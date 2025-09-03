@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_header_upper_header_links",
+  "info": {
+    "displayName": "upperHeaderLinks"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "links": {
+      "type": "string"
+    }
+  }
+}

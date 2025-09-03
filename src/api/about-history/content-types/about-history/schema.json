@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about_histories",
+  "info": {
+    "singularName": "about-history",
+    "pluralName": "about-histories",
+    "displayName": "about-history"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ttitle": {
+      "type": "string"
+    },
+    "ids": {
+      "type": "integer"
+    }
+  }
+}

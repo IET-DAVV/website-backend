@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scholorship_pages",
+  "info": {
+    "singularName": "scholorship-page",
+    "pluralName": "scholorship-pages",
+    "displayName": "Scholorship Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "file": {
+      "type": "string"
+    }
+  }
+}

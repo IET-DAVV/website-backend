@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "time_tables",
+  "info": {
+    "singularName": "time-table",
+    "pluralName": "time-tables",
+    "displayName": "Time Table",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "CourseName": {
+      "type": "enumeration",
+      "enum": [
+        "BE_FULL_TIME",
+        "BE_PART_TIME"
+      ]
+    },
+    "branch": {
+      "type": "enumeration",
+      "enum": [
+        "Computer Science",
+        "Information Technology",
+        "Mechanical Engineering",
+        "Electronics and Instrumentation",
+        "Electronics and Telecommunication"
+      ]
+    },
+    "year": {
+      "type": "enumeration",
+      "enum": [
+        "Year 1",
+        "Year2",
+        "Year3",
+        "Year4"
+      ]
+    },
+    "PdfLink": {
+      "type": "string"
+    },
+    "section": {
+      "type": "enumeration",
+      "enum": [
+        "section A",
+        "section B"
+      ]
+    }
+  }
+}

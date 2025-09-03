@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "roll_lists",
+  "info": {
+    "singularName": "roll-list",
+    "pluralName": "roll-lists",
+    "displayName": "Roll Lists"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "CourseName": {
+      "type": "string"
+    },
+    "Year": {
+      "type": "enumeration",
+      "enum": [
+        "B.E. I YEAR",
+        "B.E. II YEAR ",
+        "B.E. III YEAR",
+        "B.E. IV YEAR ",
+        "M.E. ",
+        "M.Sc."
+      ]
+    },
+    "PdfLink": {
+      "type": "string"
+    }
+  }
+}

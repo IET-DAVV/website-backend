@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about_landmarks",
+  "info": {
+    "singularName": "about-landmark",
+    "pluralName": "about-landmarks",
+    "displayName": "about-landmark",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "paragraph": {
+      "type": "text"
+    },
+    "ids": {
+      "type": "string"
+    }
+  }
+}

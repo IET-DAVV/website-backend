@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_footer_important_links",
+  "info": {
+    "displayName": "importantLinks"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "links": {
+      "type": "string"
+    }
+  }
+}

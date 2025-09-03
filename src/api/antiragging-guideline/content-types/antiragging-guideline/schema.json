@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "antiragging_guidelines",
+  "info": {
+    "singularName": "antiragging-guideline",
+    "pluralName": "antiragging-guidelines",
+    "displayName": "antiragging-guideline"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "subcontent": {
+      "type": "string"
+    },
+    "punishmentContent": {
+      "type": "text"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

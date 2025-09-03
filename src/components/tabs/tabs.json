@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_tabs_tabs",
+  "info": {
+    "displayName": "tabs"
+  },
+  "options": {},
+  "attributes": {
+    "key": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "content": {
+      "type": "json"
+    }
+  }
+}

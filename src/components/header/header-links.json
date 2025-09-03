@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_header_header_links",
+  "info": {
+    "displayName": "headerLinks"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "links": {
+      "type": "string"
+    },
+    "dropdown": {
+      "displayName": "dropdown",
+      "type": "component",
+      "repeatable": false,
+      "component": "header.dropdown"
+    }
+  }
+}

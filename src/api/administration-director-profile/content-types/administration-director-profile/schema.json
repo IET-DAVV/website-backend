@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "administration_director_profiles",
+  "info": {
+    "singularName": "administration-director-profile",
+    "pluralName": "administration-director-profiles",
+    "displayName": "Administration_DirectorProfile"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "designation_post": {
+      "type": "string"
+    },
+    "designation_department": {
+      "type": "string"
+    },
+    "designation_institute": {
+      "type": "string"
+    },
+    "designation_university": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "qualification": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "interests": {
+      "type": "string"
+    },
+    "publications": {
+      "type": "string"
+    },
+    "responsibilities": {
+      "type": "string"
+    }
+  }
+}

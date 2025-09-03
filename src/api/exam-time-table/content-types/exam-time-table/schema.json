@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exam_time_tables",
+  "info": {
+    "singularName": "exam-time-table",
+    "pluralName": "exam-time-tables",
+    "displayName": "Exam Time Table"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "examTimetable": {
+      "displayName": "examTimetable",
+      "type": "component",
+      "repeatable": false,
+      "component": "exam-timetable.exam-timetable"
+    },
+    "practicaltimetable": {
+      "displayName": "practicaltimetable",
+      "type": "component",
+      "repeatable": false,
+      "component": "exam-timetable.practicaltimetable"
+    },
+    "examNotice": {
+      "displayName": "examNotice",
+      "type": "component",
+      "repeatable": false,
+      "component": "exam-timetable.exam-notice"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faculty_datas",
+  "info": {
+    "singularName": "faculty-data",
+    "pluralName": "faculty-datas",
+    "displayName": "Faculty Data"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "subjects": {
+      "displayName": "subjects",
+      "type": "component",
+      "repeatable": false,
+      "component": "faculty.subjects"
+    },
+    "faculty": {
+      "displayName": "faculty",
+      "type": "component",
+      "repeatable": false,
+      "component": "faculty.faculty"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "landing_page_abouts",
+  "info": {
+    "singularName": "landing-page-about",
+    "pluralName": "landing-page-abouts",
+    "displayName": "Landing Page About"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "collageName": {
+      "type": "string"
+    },
+    "collegeDiscription": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    }
+  }
+}
