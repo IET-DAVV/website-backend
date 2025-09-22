@@ -1337,15 +1337,17 @@ export interface ApiHeroSectionHeroSection extends Schema.CollectionType {
   info: {
     singularName: 'hero-section';
     pluralName: 'hero-sections';
-    displayName: 'Hero Section';
+    displayName: 'Hero Section Announcement';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    newsItems: Attribute.Component<'hero-section.news-items'>;
-    announcementItems: Attribute.Component<'hero-section.announcement-items'>;
-    slides: Attribute.Component<'hero-section.slides'>;
+    label: Attribute.String;
+    description: Attribute.String;
+    Url: Attribute.String;
+    isNew: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1634,6 +1636,7 @@ export interface ApiNoticeNotice extends Schema.CollectionType {
     singularName: 'notice';
     pluralName: 'notices';
     displayName: 'Notice';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1642,6 +1645,7 @@ export interface ApiNoticeNotice extends Schema.CollectionType {
     label: Attribute.String;
     extralabel: Attribute.String;
     file: Attribute.String;
+    PDF: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

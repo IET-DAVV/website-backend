@@ -1,5 +1,17 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface TabsTabs extends Schema.Component {
+  collectionName: 'components_tabs_tabs';
+  info: {
+    displayName: 'tabs';
+  };
+  attributes: {
+    key: Attribute.String;
+    label: Attribute.String;
+    content: Attribute.JSON;
+  };
+}
+
 export interface LandingLanding extends Schema.Component {
   collectionName: 'components_landing_landing_s';
   info: {
@@ -29,15 +41,82 @@ export interface LandingCousreName extends Schema.Component {
   };
 }
 
-export interface TabsTabs extends Schema.Component {
-  collectionName: 'components_tabs_tabs';
+export interface IntakeCapacityCoursesOffered extends Schema.Component {
+  collectionName: 'components_intake_capacity_courses_offereds';
   info: {
-    displayName: 'tabs';
+    displayName: 'coursesOffered';
   };
   attributes: {
-    key: Attribute.String;
+    name: Attribute.String;
+    seats: Attribute.String;
+  };
+}
+
+export interface HeroSectionSlides extends Schema.Component {
+  collectionName: 'components_hero_section_slides';
+  info: {
+    displayName: 'slides';
+  };
+  attributes: {
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+  };
+}
+
+export interface HeroSectionNewsItems extends Schema.Component {
+  collectionName: 'components_hero_section_news_items';
+  info: {
+    displayName: 'newsItems';
+  };
+  attributes: {
     label: Attribute.String;
-    content: Attribute.JSON;
+    url: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
+export interface HeroSectionAnnouncementItems extends Schema.Component {
+  collectionName: 'components_hero_section_announcement_items';
+  info: {
+    displayName: 'announcementItems';
+  };
+  attributes: {
+    label: Attribute.String;
+    url: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
+export interface HeaderUpperHeaderLinks extends Schema.Component {
+  collectionName: 'components_header_upper_header_links';
+  info: {
+    displayName: 'upperHeaderLinks';
+  };
+  attributes: {
+    name: Attribute.String;
+    links: Attribute.String;
+  };
+}
+
+export interface HeaderHeaderLinks extends Schema.Component {
+  collectionName: 'components_header_header_links';
+  info: {
+    displayName: 'headerLinks';
+  };
+  attributes: {
+    name: Attribute.String;
+    links: Attribute.String;
+    dropdown: Attribute.Component<'header.dropdown'>;
+  };
+}
+
+export interface HeaderDropdown extends Schema.Component {
+  collectionName: 'components_header_dropdowns';
+  info: {
+    displayName: 'dropdown';
+  };
+  attributes: {
+    name: Attribute.String;
+    links: Attribute.String;
   };
 }
 
@@ -85,40 +164,6 @@ export interface FooterFooter extends Schema.Component {
   };
 }
 
-export interface HeaderUpperHeaderLinks extends Schema.Component {
-  collectionName: 'components_header_upper_header_links';
-  info: {
-    displayName: 'upperHeaderLinks';
-  };
-  attributes: {
-    name: Attribute.String;
-    links: Attribute.String;
-  };
-}
-
-export interface HeaderHeaderLinks extends Schema.Component {
-  collectionName: 'components_header_header_links';
-  info: {
-    displayName: 'headerLinks';
-  };
-  attributes: {
-    name: Attribute.String;
-    links: Attribute.String;
-    dropdown: Attribute.Component<'header.dropdown'>;
-  };
-}
-
-export interface HeaderDropdown extends Schema.Component {
-  collectionName: 'components_header_dropdowns';
-  info: {
-    displayName: 'dropdown';
-  };
-  attributes: {
-    name: Attribute.String;
-    links: Attribute.String;
-  };
-}
-
 export interface FacultySubjects extends Schema.Component {
   collectionName: 'components_faculty_subjects';
   info: {
@@ -148,40 +193,6 @@ export interface FacultyFaculty extends Schema.Component {
     dob: Attribute.Date;
     qualifications: Attribute.JSON;
     tabs: Attribute.Component<'tabs.tabs'>;
-  };
-}
-
-export interface HeroSectionSlides extends Schema.Component {
-  collectionName: 'components_hero_section_slides';
-  info: {
-    displayName: 'slides';
-  };
-  attributes: {
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-  };
-}
-
-export interface HeroSectionNewsItems extends Schema.Component {
-  collectionName: 'components_hero_section_news_items';
-  info: {
-    displayName: 'newsItems';
-  };
-  attributes: {
-    label: Attribute.String;
-    url: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
-export interface HeroSectionAnnouncementItems extends Schema.Component {
-  collectionName: 'components_hero_section_announcement_items';
-  info: {
-    displayName: 'announcementItems';
-  };
-  attributes: {
-    label: Attribute.String;
-    url: Attribute.String;
-    description: Attribute.Text;
   };
 }
 
@@ -244,41 +255,30 @@ export interface DocDoc extends Schema.Component {
   };
 }
 
-export interface IntakeCapacityCoursesOffered extends Schema.Component {
-  collectionName: 'components_intake_capacity_courses_offereds';
-  info: {
-    displayName: 'coursesOffered';
-  };
-  attributes: {
-    name: Attribute.String;
-    seats: Attribute.String;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'tabs.tabs': TabsTabs;
       'landing.landing': LandingLanding;
       'landing.ex': LandingEx;
       'landing.cousre-name': LandingCousreName;
-      'tabs.tabs': TabsTabs;
+      'intake-capacity.courses-offered': IntakeCapacityCoursesOffered;
+      'hero-section.slides': HeroSectionSlides;
+      'hero-section.news-items': HeroSectionNewsItems;
+      'hero-section.announcement-items': HeroSectionAnnouncementItems;
+      'header.upper-header-links': HeaderUpperHeaderLinks;
+      'header.header-links': HeaderHeaderLinks;
+      'header.dropdown': HeaderDropdown;
       'footer.quick-findings': FooterQuickFindings;
       'footer.more-information': FooterMoreInformation;
       'footer.important-links': FooterImportantLinks;
       'footer.footer': FooterFooter;
-      'header.upper-header-links': HeaderUpperHeaderLinks;
-      'header.header-links': HeaderHeaderLinks;
-      'header.dropdown': HeaderDropdown;
       'faculty.subjects': FacultySubjects;
       'faculty.faculty': FacultyFaculty;
-      'hero-section.slides': HeroSectionSlides;
-      'hero-section.news-items': HeroSectionNewsItems;
-      'hero-section.announcement-items': HeroSectionAnnouncementItems;
       'exam-timetable.practicaltimetable': ExamTimetablePracticaltimetable;
       'exam-timetable.exam-timetable': ExamTimetableExamTimetable;
       'exam-timetable.exam-notice': ExamTimetableExamNotice;
       'doc.doc': DocDoc;
-      'intake-capacity.courses-offered': IntakeCapacityCoursesOffered;
     }
   }
 }
