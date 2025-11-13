@@ -4,24 +4,67 @@
   "info": {
     "singularName": "faculty-data",
     "pluralName": "faculty-datas",
-    "displayName": "Faculty Data"
+    "displayName": "Faculty Data",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "subjects": {
-      "displayName": "subjects",
-      "type": "component",
-      "repeatable": false,
-      "component": "faculty.subjects"
+    "Name": {
+      "type": "string"
     },
-    "faculty": {
-      "displayName": "faculty",
+    "emp_id": {
+      "type": "string"
+    },
+    "qualification": {
+      "type": "string"
+    },
+    "contact_details": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "about_faculty": {
+      "type": "string"
+    },
+    "education_qualifcation": {
+      "displayName": "Education Qualification",
       "type": "component",
-      "repeatable": false,
-      "component": "faculty.faculty"
+      "repeatable": true,
+      "component": "sno.education-qualification"
+    },
+    "work_experience": {
+      "displayName": "Work exp",
+      "type": "component",
+      "repeatable": true,
+      "component": "work-exp.work-exp"
+    },
+    "project_detials": {
+      "displayName": "project",
+      "type": "component",
+      "repeatable": true,
+      "component": "projects.project"
+    },
+    "research_details": {
+      "displayName": "Research",
+      "type": "component",
+      "repeatable": true,
+      "component": "research.research"
+    },
+    "phd_supervision": {
+      "displayName": "phd",
+      "type": "component",
+      "repeatable": true,
+      "component": "phds.phd"
+    },
+    "testing_and_consultancy": {
+      "displayName": "testing",
+      "type": "component",
+      "repeatable": true,
+      "component": "testings.testing"
     }
   }
 }

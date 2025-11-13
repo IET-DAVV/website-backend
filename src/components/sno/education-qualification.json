@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sno_education_qualifications",
+  "info": {
+    "displayName": "Education Qualification"
+  },
+  "options": {},
+  "attributes": {
+    "sno": {
+      "type": "string"
+    },
+    "degree": {
+      "type": "string"
+    },
+    "year": {
+      "type": "string"
+    },
+    "institute": {
+      "type": "string"
+    },
+    "division": {
+      "type": "string"
+    },
+    "specialization": {
+      "type": "string"
+    }
+  }
+}

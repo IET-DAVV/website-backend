@@ -22,14 +22,21 @@
       "type": "string"
     },
     "PDF": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "isArchived": {
+      "type": "boolean"
+    },
+    "isNew": {
+      "type": "boolean"
     }
   }
 }

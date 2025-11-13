@@ -18,11 +18,14 @@
     "description": {
       "type": "string"
     },
-    "Url": {
+    "url": {
       "type": "string"
     },
     "isNew": {
       "type": "boolean"
+    },
+    "flag": {
+      "type": "integer"
     }
   }
 }

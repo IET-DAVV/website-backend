@@ -1,5 +1,32 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface WorkExpWorkExp extends Schema.Component {
+  collectionName: 'components_work_exp_work_exps';
+  info: {
+    displayName: 'Work exp';
+  };
+  attributes: {
+    sno: Attribute.String;
+    employer: Attribute.String;
+    designation: Attribute.String;
+    department: Attribute.String;
+    duration_of_employment_in_months: Attribute.String;
+    date_of_joining: Attribute.Date;
+    mode_of_employment: Attribute.Enumeration<['Regular', 'Contract']>;
+  };
+}
+
+export interface TestingsTesting extends Schema.Component {
+  collectionName: 'components_testings_testings';
+  info: {
+    displayName: 'testing';
+  };
+  attributes: {
+    sno: Attribute.String;
+    description: Attribute.String;
+  };
+}
+
 export interface TabsTabs extends Schema.Component {
   collectionName: 'components_tabs_tabs';
   info: {
@@ -9,6 +36,76 @@ export interface TabsTabs extends Schema.Component {
     key: Attribute.String;
     label: Attribute.String;
     content: Attribute.JSON;
+  };
+}
+
+export interface TabsHh extends Schema.Component {
+  collectionName: 'components_tabs_hhs';
+  info: {
+    displayName: 'hh';
+  };
+  attributes: {
+    hjuik: Attribute.String;
+  };
+}
+
+export interface SnoEducationQualification extends Schema.Component {
+  collectionName: 'components_sno_education_qualifications';
+  info: {
+    displayName: 'Education Qualification';
+  };
+  attributes: {
+    sno: Attribute.String;
+    degree: Attribute.String;
+    year: Attribute.String;
+    institute: Attribute.String;
+    division: Attribute.String;
+    specialization: Attribute.String;
+  };
+}
+
+export interface ResearchResearch extends Schema.Component {
+  collectionName: 'components_research_research';
+  info: {
+    displayName: 'Research';
+  };
+  attributes: {
+    sno: Attribute.String;
+    type: Attribute.String;
+    title: Attribute.String;
+    publication_year: Attribute.String;
+    paper_link: Attribute.String;
+    author: Attribute.String;
+    publishers: Attribute.String;
+  };
+}
+
+export interface ProjectsProject extends Schema.Component {
+  collectionName: 'components_projects_projects';
+  info: {
+    displayName: 'project';
+  };
+  attributes: {
+    sno: Attribute.String;
+    type: Attribute.String;
+    title: Attribute.String;
+    duration: Attribute.String;
+    amount: Attribute.String;
+    year: Attribute.String;
+  };
+}
+
+export interface PhdsPhd extends Schema.Component {
+  collectionName: 'components_phds_phds';
+  info: {
+    displayName: 'phd';
+  };
+  attributes: {
+    sno: Attribute.String;
+    year: Attribute.String;
+    thesis_title: Attribute.String;
+    university: Attribute.String;
+    student: Attribute.String;
   };
 }
 
@@ -258,7 +355,14 @@ export interface DocDoc extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'work-exp.work-exp': WorkExpWorkExp;
+      'testings.testing': TestingsTesting;
       'tabs.tabs': TabsTabs;
+      'tabs.hh': TabsHh;
+      'sno.education-qualification': SnoEducationQualification;
+      'research.research': ResearchResearch;
+      'projects.project': ProjectsProject;
+      'phds.phd': PhdsPhd;
       'landing.landing': LandingLanding;
       'landing.ex': LandingEx;
       'landing.cousre-name': LandingCousreName;

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_testings_testings",
+  "info": {
+    "displayName": "testing"
+  },
+  "options": {},
+  "attributes": {
+    "sno": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

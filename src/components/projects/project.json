@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_projects_projects",
+  "info": {
+    "displayName": "project"
+  },
+  "options": {},
+  "attributes": {
+    "sno": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "string"
+    },
+    "year": {
+      "type": "string"
+    }
+  }
+}

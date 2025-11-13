@@ -1211,13 +1211,27 @@ export interface ApiFacultyDataFacultyData extends Schema.CollectionType {
     singularName: 'faculty-data';
     pluralName: 'faculty-datas';
     displayName: 'Faculty Data';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    subjects: Attribute.Component<'faculty.subjects'>;
-    faculty: Attribute.Component<'faculty.faculty'>;
+    Name: Attribute.String;
+    emp_id: Attribute.String;
+    qualification: Attribute.String;
+    contact_details: Attribute.String;
+    email: Attribute.String;
+    about_faculty: Attribute.String;
+    education_qualifcation: Attribute.Component<
+      'sno.education-qualification',
+      true
+    >;
+    work_experience: Attribute.Component<'work-exp.work-exp', true>;
+    project_detials: Attribute.Component<'projects.project', true>;
+    research_details: Attribute.Component<'research.research', true>;
+    phd_supervision: Attribute.Component<'phds.phd', true>;
+    testing_and_consultancy: Attribute.Component<'testings.testing', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1346,8 +1360,9 @@ export interface ApiHeroSectionHeroSection extends Schema.CollectionType {
   attributes: {
     label: Attribute.String;
     description: Attribute.String;
-    Url: Attribute.String;
+    url: Attribute.String;
     isNew: Attribute.Boolean;
+    flag: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1646,6 +1661,8 @@ export interface ApiNoticeNotice extends Schema.CollectionType {
     extralabel: Attribute.String;
     file: Attribute.String;
     PDF: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    isArchived: Attribute.Boolean;
+    isNew: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1837,6 +1854,62 @@ export interface ApiSearchContentSearchContent extends Schema.CollectionType {
   };
 }
 
+export interface ApiTempTemp extends Schema.CollectionType {
+  collectionName: 'temps';
+  info: {
+    singularName: 'temp';
+    pluralName: 'temps';
+    displayName: 'temp';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::temp.temp', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::temp.temp', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTempFacultyMemberTempFacultyMember
+  extends Schema.CollectionType {
+  collectionName: 'temp_faculty_members';
+  info: {
+    singularName: 'temp-faculty-member';
+    pluralName: 'temp-faculty-members';
+    displayName: 'temp-faculty-member';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    discription: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::temp-faculty-member.temp-faculty-member',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::temp-faculty-member.temp-faculty-member',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTestTimeTableTestTimeTable extends Schema.CollectionType {
   collectionName: 'test_time_tables';
   info: {
@@ -1971,6 +2044,8 @@ declare module '@strapi/types' {
       'api::roll-list.roll-list': ApiRollListRollList;
       'api::scholorship-page.scholorship-page': ApiScholorshipPageScholorshipPage;
       'api::search-content.search-content': ApiSearchContentSearchContent;
+      'api::temp.temp': ApiTempTemp;
+      'api::temp-faculty-member.temp-faculty-member': ApiTempFacultyMemberTempFacultyMember;
       'api::test-time-table.test-time-table': ApiTestTimeTableTestTimeTable;
       'api::time-table.time-table': ApiTimeTableTimeTable;
     }

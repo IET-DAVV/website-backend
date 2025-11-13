@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_work_exp_work_exps",
+  "info": {
+    "displayName": "Work exp"
+  },
+  "options": {},
+  "attributes": {
+    "sno": {
+      "type": "string"
+    },
+    "employer": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "department": {
+      "type": "string"
+    },
+    "duration_of_employment_in_months": {
+      "type": "string"
+    },
+    "date_of_joining": {
+      "type": "date"
+    },
+    "mode_of_employment": {
+      "type": "enumeration",
+      "enum": [
+        "Regular",
+        "Contract"
+      ]
+    }
+  }
+}

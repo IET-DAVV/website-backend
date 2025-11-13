@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_phds_phds",
+  "info": {
+    "displayName": "phd"
+  },
+  "options": {},
+  "attributes": {
+    "sno": {
+      "type": "string"
+    },
+    "year": {
+      "type": "string"
+    },
+    "thesis_title": {
+      "type": "string"
+    },
+    "university": {
+      "type": "string"
+    },
+    "student": {
+      "type": "string"
+    }
+  }
+}

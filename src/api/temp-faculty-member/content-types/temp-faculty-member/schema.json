@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "temp_faculty_members",
+  "info": {
+    "singularName": "temp-faculty-member",
+    "pluralName": "temp-faculty-members",
+    "displayName": "temp-faculty-member"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "discription": {
+      "type": "string"
+    }
+  }
+}

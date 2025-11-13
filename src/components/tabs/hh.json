@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_tabs_hhs",
+  "info": {
+    "displayName": "hh"
+  },
+  "options": {},
+  "attributes": {
+    "hjuik": {
+      "type": "string"
+    }
+  }
+}
