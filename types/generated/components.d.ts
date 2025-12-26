@@ -64,6 +64,21 @@ export interface SnoEducationQualification extends Schema.Component {
   };
 }
 
+export interface ProjectsProject extends Schema.Component {
+  collectionName: 'components_projects_projects';
+  info: {
+    displayName: 'project';
+  };
+  attributes: {
+    sno: Attribute.String;
+    type: Attribute.String;
+    title: Attribute.String;
+    duration: Attribute.String;
+    amount: Attribute.String;
+    year: Attribute.String;
+  };
+}
+
 export interface ResearchResearch extends Schema.Component {
   collectionName: 'components_research_research';
   info: {
@@ -77,21 +92,6 @@ export interface ResearchResearch extends Schema.Component {
     paper_link: Attribute.String;
     author: Attribute.String;
     publishers: Attribute.String;
-  };
-}
-
-export interface ProjectsProject extends Schema.Component {
-  collectionName: 'components_projects_projects';
-  info: {
-    displayName: 'project';
-  };
-  attributes: {
-    sno: Attribute.String;
-    type: Attribute.String;
-    title: Attribute.String;
-    duration: Attribute.String;
-    amount: Attribute.String;
-    year: Attribute.String;
   };
 }
 
@@ -146,40 +146,6 @@ export interface IntakeCapacityCoursesOffered extends Schema.Component {
   attributes: {
     name: Attribute.String;
     seats: Attribute.String;
-  };
-}
-
-export interface HeroSectionSlides extends Schema.Component {
-  collectionName: 'components_hero_section_slides';
-  info: {
-    displayName: 'slides';
-  };
-  attributes: {
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-  };
-}
-
-export interface HeroSectionNewsItems extends Schema.Component {
-  collectionName: 'components_hero_section_news_items';
-  info: {
-    displayName: 'newsItems';
-  };
-  attributes: {
-    label: Attribute.String;
-    url: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
-export interface HeroSectionAnnouncementItems extends Schema.Component {
-  collectionName: 'components_hero_section_announcement_items';
-  info: {
-    displayName: 'announcementItems';
-  };
-  attributes: {
-    label: Attribute.String;
-    url: Attribute.String;
-    description: Attribute.Text;
   };
 }
 
@@ -261,38 +227,6 @@ export interface FooterFooter extends Schema.Component {
   };
 }
 
-export interface FacultySubjects extends Schema.Component {
-  collectionName: 'components_faculty_subjects';
-  info: {
-    displayName: 'subjects';
-  };
-  attributes: {
-    subject: Attribute.String;
-    path: Attribute.String;
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-  };
-}
-
-export interface FacultyFaculty extends Schema.Component {
-  collectionName: 'components_faculty_faculties';
-  info: {
-    displayName: 'faculty';
-  };
-  attributes: {
-    branch: Attribute.String;
-    name: Attribute.String;
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    position: Attribute.String;
-    description: Attribute.String;
-    email: Attribute.Email;
-    phone: Attribute.BigInteger;
-    designation: Attribute.String;
-    dob: Attribute.Date;
-    qualifications: Attribute.JSON;
-    tabs: Attribute.Component<'tabs.tabs'>;
-  };
-}
-
 export interface ExamTimetablePracticaltimetable extends Schema.Component {
   collectionName: 'components_exam_timetable_practicaltimetables';
   info: {
@@ -352,6 +286,72 @@ export interface DocDoc extends Schema.Component {
   };
 }
 
+export interface HeroSectionSlides extends Schema.Component {
+  collectionName: 'components_hero_section_slides';
+  info: {
+    displayName: 'slides';
+  };
+  attributes: {
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+  };
+}
+
+export interface HeroSectionNewsItems extends Schema.Component {
+  collectionName: 'components_hero_section_news_items';
+  info: {
+    displayName: 'newsItems';
+  };
+  attributes: {
+    label: Attribute.String;
+    url: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
+export interface HeroSectionAnnouncementItems extends Schema.Component {
+  collectionName: 'components_hero_section_announcement_items';
+  info: {
+    displayName: 'announcementItems';
+  };
+  attributes: {
+    label: Attribute.String;
+    url: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
+export interface FacultySubjects extends Schema.Component {
+  collectionName: 'components_faculty_subjects';
+  info: {
+    displayName: 'subjects';
+  };
+  attributes: {
+    subject: Attribute.String;
+    path: Attribute.String;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+  };
+}
+
+export interface FacultyFaculty extends Schema.Component {
+  collectionName: 'components_faculty_faculties';
+  info: {
+    displayName: 'faculty';
+  };
+  attributes: {
+    branch: Attribute.String;
+    name: Attribute.String;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    position: Attribute.String;
+    description: Attribute.String;
+    email: Attribute.Email;
+    phone: Attribute.BigInteger;
+    designation: Attribute.String;
+    dob: Attribute.Date;
+    qualifications: Attribute.JSON;
+    tabs: Attribute.Component<'tabs.tabs'>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -360,16 +360,13 @@ declare module '@strapi/types' {
       'tabs.tabs': TabsTabs;
       'tabs.hh': TabsHh;
       'sno.education-qualification': SnoEducationQualification;
-      'research.research': ResearchResearch;
       'projects.project': ProjectsProject;
+      'research.research': ResearchResearch;
       'phds.phd': PhdsPhd;
       'landing.landing': LandingLanding;
       'landing.ex': LandingEx;
       'landing.cousre-name': LandingCousreName;
       'intake-capacity.courses-offered': IntakeCapacityCoursesOffered;
-      'hero-section.slides': HeroSectionSlides;
-      'hero-section.news-items': HeroSectionNewsItems;
-      'hero-section.announcement-items': HeroSectionAnnouncementItems;
       'header.upper-header-links': HeaderUpperHeaderLinks;
       'header.header-links': HeaderHeaderLinks;
       'header.dropdown': HeaderDropdown;
@@ -377,12 +374,15 @@ declare module '@strapi/types' {
       'footer.more-information': FooterMoreInformation;
       'footer.important-links': FooterImportantLinks;
       'footer.footer': FooterFooter;
-      'faculty.subjects': FacultySubjects;
-      'faculty.faculty': FacultyFaculty;
       'exam-timetable.practicaltimetable': ExamTimetablePracticaltimetable;
       'exam-timetable.exam-timetable': ExamTimetableExamTimetable;
       'exam-timetable.exam-notice': ExamTimetableExamNotice;
       'doc.doc': DocDoc;
+      'hero-section.slides': HeroSectionSlides;
+      'hero-section.news-items': HeroSectionNewsItems;
+      'hero-section.announcement-items': HeroSectionAnnouncementItems;
+      'faculty.subjects': FacultySubjects;
+      'faculty.faculty': FacultyFaculty;
     }
   }
 }
